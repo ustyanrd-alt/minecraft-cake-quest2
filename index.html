@@ -7,7 +7,7 @@
 <style>
   :root{
     /* Подогнать под фон: размер области с сеткой (включая место под output) */
-    --grid-size: 460px;        /* ширина квадрата, на котором рисована 3x3 сетка */
+    --grid-size: 520px;        /* ширина квадрата, на котором рисована 3x3 сетка */
     --output-gap: 120px;       /* ширина области справа для output (подогнать, если нужно) */
     --gap: 8px;                /* расстояние между клетками */
     --cell-size: calc((var(--grid-size) - (var(--gap) * 2)) / 3);
@@ -356,7 +356,7 @@ function checkRecipe(){
   if(cur.some(v => v === null)){
     output.innerHTML = '';
     resultPreview.innerHTML = '';
-    hint.textContent = 'Соберите: верх — milk×3; среда — sugar, egg, sugar; низ — wheat×3';
+    hint.textContent = 'Скрафти правильно свой торт на день рождение! Иначе его не будет!';
     return false;
   }
   const ok = RECIPE.every((t,i) => cur[i] === t);
@@ -377,12 +377,12 @@ function checkRecipe(){
     rimg.style.objectFit = 'contain';
     resultPreview.appendChild(rimg);
 
-    hint.textContent = 'Ура! Торт готов — подсказка: "Иди к дивану" (поменяй текст, если нужно).';
+    hint.textContent = 'Ура! Торт готов — для следующего задания напиши в директ подсказка 2.';
     return true;
   } else {
     output.innerHTML = '';
     resultPreview.innerHTML = '';
-    hint.textContent = 'Ещё не тот расклад — пробуй снова!';
+    hint.textContent = 'Не тот расклад — пробуй снова!';
     return false;
   }
 }
